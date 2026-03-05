@@ -36,12 +36,13 @@ export const AddPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <header className="bg-white/80 backdrop-blur-sm shadow-lg sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4">
+    <div style={{ backgroundColor: 'var(--color-bg-primary)' }} className="min-h-screen">
+      <header style={{ backgroundColor: 'rgba(250, 249, 246, 0.8)' }} className="sticky top-0 z-50 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto px-6 py-5">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+            style={{ color: 'var(--color-text-secondary)' }}
+            className="inline-flex items-center gap-2 font-medium transition-all duration-200 hover:scale-105"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -51,17 +52,19 @@ export const AddPage = () => {
         </div>
       </header>
 
-      <main className="max-w-2xl mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+      <main className="max-w-2xl mx-auto px-6 py-8">
+        <div className="mb-8 animate-fade-in-up">
+          <h1 style={{ color: 'var(--color-text-primary)' }} className="text-4xl font-bold mb-3">
             添加记录
           </h1>
-          <p className="text-gray-600">记录你的每一笔收支</p>
+          <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg">
+            记录你的每一笔收支
+          </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 space-y-8">
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-lg)', animationDelay: '0.1s' }} className="rounded-3xl p-8 animate-fade-in-up">
+            <label className="block text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
               收支类型
             </label>
             <div className="flex gap-4">
@@ -71,13 +74,17 @@ export const AddPage = () => {
                   setType('expense');
                   setCategory('');
                 }}
-                className={`flex-1 py-4 px-6 rounded-xl font-medium text-lg transition-all duration-200 ${
+                className={`flex-1 py-5 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ${
                   type === 'expense'
-                    ? 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'text-white shadow-lg scale-105'
+                    : 'hover:scale-105'
                 }`}
+                style={{
+                  backgroundColor: type === 'expense' ? 'var(--color-accent-red)' : 'var(--color-bg-primary)',
+                  color: type === 'expense' ? 'white' : 'var(--color-text-secondary)'
+                }}
               >
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-3">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                   </svg>
@@ -90,13 +97,17 @@ export const AddPage = () => {
                   setType('income');
                   setCategory('');
                 }}
-                className={`flex-1 py-4 px-6 rounded-xl font-medium text-lg transition-all duration-200 ${
+                className={`flex-1 py-5 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ${
                   type === 'income'
-                    ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'text-white shadow-lg scale-105'
+                    : 'hover:scale-105'
                 }`}
+                style={{
+                  backgroundColor: type === 'income' ? 'var(--color-accent-green)' : 'var(--color-bg-primary)',
+                  color: type === 'income' ? 'white' : 'var(--color-text-secondary)'
+                }}
               >
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-3">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
@@ -106,12 +117,12 @@ export const AddPage = () => {
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
+          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-md)', animationDelay: '0.2s' }} className="rounded-3xl p-8 animate-fade-in-up">
+            <label className="block text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
               金额
             </label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">
+              <span style={{ color: 'var(--color-text-secondary)' }} className="absolute left-5 top-1/2 -translate-y-1/2 font-semibold text-xl">
                 ¥
               </span>
               <input
@@ -119,58 +130,82 @@ export const AddPage = () => {
                 step="0.01"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full pl-10 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-lg font-medium"
+                className="w-full pl-14 pr-5 py-5 rounded-2xl transition-all duration-200 text-2xl font-bold focus:outline-none focus:ring-2"
+                style={{
+                  backgroundColor: 'var(--color-bg-primary)',
+                  color: 'var(--color-text-primary)',
+                  border: `2px solid ${amount ? 'var(--color-accent-blue)' : 'var(--color-border)'}`
+                }}
                 placeholder="0.00"
               />
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
+          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-md)', animationDelay: '0.3s' }} className="rounded-3xl p-8 animate-fade-in-up">
+            <label className="block text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
               分类
             </label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-lg font-medium appearance-none bg-white cursor-pointer"
-            >
-              <option value="">请选择分类</option>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {CATEGORIES[type].map((cat) => (
-                <option key={cat} value={cat}>
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setCategory(cat)}
+                  className={`py-4 px-4 rounded-xl font-medium transition-all duration-200 ${
+                    category === cat
+                      ? 'text-white shadow-lg scale-105'
+                      : 'hover:scale-102'
+                  }`}
+                  style={{
+                    backgroundColor: category === cat ? 'var(--color-accent-blue)' : 'var(--color-bg-primary)',
+                    color: category === cat ? 'white' : 'var(--color-text-secondary)'
+                  }}
+                >
                   {cat}
-                </option>
+                </button>
               ))}
-            </select>
+            </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
+          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-md)', animationDelay: '0.4s' }} className="rounded-3xl p-8 animate-fade-in-up">
+            <label className="block text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
               日期
             </label>
             <input
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-lg font-medium cursor-pointer"
+              className="w-full px-5 py-5 rounded-2xl transition-all duration-200 text-lg font-medium focus:outline-none focus:ring-2"
+              style={{
+                backgroundColor: 'var(--color-bg-primary)',
+                color: 'var(--color-text-primary)',
+                border: '2px solid var(--color-border)'
+              }}
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-3">
+          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-md)', animationDelay: '0.5s' }} className="rounded-3xl p-8 animate-fade-in-up">
+            <label className="block text-sm font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
               备注（可选）
             </label>
             <textarea
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-none"
-              rows={3}
+              className="w-full px-5 py-5 rounded-2xl transition-all duration-200 resize-none focus:outline-none focus:ring-2"
+              style={{
+                backgroundColor: 'var(--color-bg-primary)',
+                color: 'var(--color-text-primary)',
+                border: '2px solid var(--color-border)'
+              }}
+              rows={4}
               placeholder="添加一些备注信息..."
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-4 rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold text-lg"
+            style={{ backgroundColor: 'var(--color-accent-blue)', boxShadow: 'var(--shadow-lg)', animationDelay: '0.6s' }}
+            className="w-full text-white py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 active:scale-95 animate-fade-in-up"
           >
             保存记录
           </button>
