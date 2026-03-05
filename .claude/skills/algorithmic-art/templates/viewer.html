@@ -497,11 +497,28 @@
         }
 
         function generateFlowField() {
-          // fill this in
+            // TODO: Implement flow field generation based on your algorithm
+            // Example: Create a flow field using Perlin noise
+            // for (let y = 0; y < rows; y++) {
+            //     for (let x = 0; x < cols; x++) {
+            //         let index = x + y * cols;
+            //         let angle = noise(x * 0.1, y * 0.1) * TWO_PI * 2;
+            //         flowField[index] = angle;
+            //     }
+            // }
+            console.log('generateFlowField: Implement your flow field generation logic here');
         }
 
         function draw() {
-            // fill this in
+            // TODO: Implement main drawing loop for your algorithm
+            // Example: Update and draw particles
+            // for (let i = 0; i < particles.length; i++) {
+            //     particles[i].follow(flowField);
+            //     particles[i].update();
+            //     particles[i].edges();
+            //     particles[i].show();
+            // }
+            console.log('draw: Implement your main drawing logic here');
         }
 
         // ═══════════════════════════════════════════════════════════════════════
@@ -510,9 +527,53 @@
 
         class Particle {
             constructor() {
-                // fill this in
+                // TODO: Initialize particle properties
+                // Example: Set random position and velocity
+                // this.pos = createVector(random(width), random(height));
+                // this.vel = createVector(0, 0);
+                // this.acc = createVector(0, 0);
+                // this.maxSpeed = params.speed;
+                // this.prevPos = this.pos.copy();
+                console.log('Particle constructor: Initialize particle properties here');
             }
-            // fill this in
+
+            // TODO: Add particle methods based on your algorithm needs
+            // Example methods:
+            // follow(flowField) {
+            //     let x = floor(this.pos.x / scl);
+            //     let y = floor(this.pos.y / scl);
+            //     let index = x + y * cols;
+            //     if (index >= 0 && index < flowField.length) {
+            //         let force = p5.Vector.fromAngle(flowField[index]);
+            //         this.acc.add(force);
+            //     }
+            // }
+            //
+            // update() {
+            //     this.vel.add(this.acc);
+            //     this.vel.limit(this.maxSpeed);
+            //     this.pos.add(this.vel);
+            //     this.acc.mult(0);
+            // }
+            //
+            // edges() {
+            //     if (this.pos.x > width) this.pos.x = 0;
+            //     if (this.pos.x < 0) this.pos.x = width;
+            //     if (this.pos.y > height) this.pos.y = 0;
+            //     if (this.pos.y < 0) this.pos.y = height;
+            // }
+            //
+            // show() {
+            //     stroke(params.color1);
+            //     strokeWeight(params.lineWidth);
+            //     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
+            //     this.updatePrev();
+            // }
+            //
+            // updatePrev() {
+            //     this.prevPos.x = this.pos.x;
+            //     this.prevPos.y = this.pos.y;
+            // }
         }
 
         // ═══════════════════════════════════════════════════════════════════════
@@ -520,11 +581,23 @@
         // ═══════════════════════════════════════════════════════════════════════
 
         function updateParam(paramName, value) {
-            // fill this in
+            // TODO: Update parameter based on your algorithm needs
+            // Example: Update parameter and regenerate if needed
+            // params[paramName] = value;
+            // if (paramName === 'seed' || paramName === 'particleCount') {
+            //     initializeSystem();
+            // }
+            console.log(`updateParam: ${paramName} = ${value}`);
         }
 
         function updateColor(colorId, value) {
-            // fill this in
+            // TODO: Update color parameter based on your algorithm needs
+            // Example: Update specific color parameter
+            // params[colorId] = value;
+            // if (colorId === 'color1' || colorId === 'color2') {
+            //     background(params.color1); // Clear with new color
+            // }
+            console.log(`updateColor: ${colorId} = ${value}`);
         }
 
         // ═══════════════════════════════════════════════════════════════════════

@@ -60,7 +60,14 @@ export const StatsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div style={{ backgroundColor: 'var(--color-accent-green)', boxShadow: 'var(--shadow-lg)', animationDelay: '0.1s' }} className="rounded-3xl p-8 text-white animate-fade-in-up">
+          <div 
+            style={{ 
+              backgroundColor: 'var(--color-accent-green)', 
+              boxShadow: 'var(--shadow-lg)',
+              animationDelay: '0.1s'
+            }} 
+            className="rounded-3xl p-8 text-white animate-fade-in-up"
+          >
             <div className="flex items-center justify-between mb-6">
               <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +80,14 @@ export const StatsPage = () => {
             <p className="text-white/80 text-base">本月总收入</p>
           </div>
 
-          <div style={{ backgroundColor: 'var(--color-accent-red)', boxShadow: 'var(--shadow-lg)', animationDelay: '0.2s' }} className="rounded-3xl p-8 text-white animate-fade-in-up">
+          <div 
+            style={{ 
+              backgroundColor: 'var(--color-accent-red)', 
+              boxShadow: 'var(--shadow-lg)',
+              animationDelay: '0.2s'
+            }} 
+            className="rounded-3xl p-8 text-white animate-fade-in-up"
+          >
             <div className="flex items-center justify-between mb-6">
               <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +122,14 @@ export const StatsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-md)', animationDelay: '0.4s' }} className="rounded-3xl p-8 animate-fade-in-up">
+          <div 
+            style={{ 
+              backgroundColor: 'var(--color-bg-secondary)', 
+              boxShadow: 'var(--shadow-md)',
+              animationDelay: '0.4s'
+            }} 
+            className="rounded-3xl p-8 animate-fade-in-up"
+          >
             <h2 style={{ color: 'var(--color-text-primary)' }} className="text-2xl font-bold mb-6">
               收支比例
             </h2>
@@ -182,7 +203,14 @@ export const StatsPage = () => {
             )}
           </div>
 
-          <div style={{ backgroundColor: 'var(--color-bg-secondary)', boxShadow: 'var(--shadow-md)', animationDelay: '0.5s' }} className="rounded-3xl p-8 animate-fade-in-up">
+          <div 
+            style={{ 
+              backgroundColor: 'var(--color-bg-secondary)', 
+              boxShadow: 'var(--shadow-md)',
+              animationDelay: '0.5s'
+            }} 
+            className="rounded-3xl p-8 animate-fade-in-up"
+          >
             <h2 style={{ color: 'var(--color-text-primary)' }} className="text-2xl font-bold mb-6">
               分类排行
             </h2>
